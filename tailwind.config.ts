@@ -15,6 +15,13 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  container: {
+    center: true,
+    padding: '1rem',
+    screens: {
+      '2xl': '1000px'
+    }
+  },
+  plugins: [require("daisyui")],
 }
 export default config
