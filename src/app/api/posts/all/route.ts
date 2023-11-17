@@ -16,7 +16,7 @@ export async function GET() {
             });
         return NextResponse.json(response, {status: 200})
     }catch(error){
-        return NextResponse.json({message: 'could not fetch tags'}, {status: 500})
+        return NextResponse.json({message: 'could not fetch post'}, {status: 500})
     }
     
 }
