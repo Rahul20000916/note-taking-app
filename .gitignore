@@ -6,7 +6,7 @@ node_modules/
 
 # Prisma
 /prisma/.env
-# /prisma/schema.prisma
+/prisma/schema.prisma
 
 # Environment variables
 .env
