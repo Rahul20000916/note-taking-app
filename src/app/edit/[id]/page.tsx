@@ -110,7 +110,7 @@ const EditNotePage: FC<EditNotePageProps> = ({ params }) => {
     },
   });
 
-  const handleEditPost: SubmitHandler<FormInputPost> = (data) => {
+  const handleEditPost: SubmitHandler<FormInputPost> = (data:any) => {
     updatePost(data);
   };
 
