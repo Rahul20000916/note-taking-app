@@ -1,7 +1,8 @@
-'use client'
-import PostCard from '@/components/PostCard'
-import axios from 'axios';
+// pages/index.tsx
+
 import { useState, useEffect } from 'react';
+import PostCard from '@/components/PostCard';
+import axios from 'axios';
 
 interface Post {
   id: string;
@@ -19,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await axios.get('/api/posts/all');
+        const response = await axios.get('/api/getPosts');
         console.log(response.data, 'data fetching');
         setPosts(response.data);
       } catch (error) {
