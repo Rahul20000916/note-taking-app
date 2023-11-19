@@ -3,6 +3,7 @@ import PostCard from '@/components/PostCard'
 import axios from 'axios';
 import { PenSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { fetchPosts } from './getAll/fetchPosts';
 
 interface Post {
   id: string;
@@ -18,16 +19,16 @@ export default function Home() {
   const [posts, setPosts] = useState<Post[] | null>(null);
 
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchData() {
       try {
-        const response = await axios.get('/api/fetchPosts');
-        console.log(response.data, 'data fetching');
-        setPosts(response.data);
+        const data = await fetchPosts(); 
+        console.log(data, 'data fetching');
+        setPosts(data);
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
     }
-    fetchPosts();
+    fetchData();
   }, []);
 
   return (
