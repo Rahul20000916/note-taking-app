@@ -4,6 +4,7 @@ import axios from 'axios';
 import { PenSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+
 interface Post {
   id: string;
   title: string;
@@ -20,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await axios.get('/api/posts/all');
+        const response = await axios.get('/api/getPosts');
         console.log(response.data, 'data fetching');
         setPosts(response.data);
       } catch (error) {
