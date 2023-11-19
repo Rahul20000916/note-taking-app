@@ -51,7 +51,6 @@ const FormPost: FC<FormPostProps> = ({
         <select
           {...register("tagId", { required: true })}
           className="select select-ghost w-full max-w-lg"
-          defaultValue={''}
         >
           <option disabled value="">
             Select tags
