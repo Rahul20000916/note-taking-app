@@ -1,7 +1,6 @@
 'use client'
 import PostCard from '@/components/PostCard'
 import axios from 'axios';
-import { PenSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface Post {
@@ -32,10 +31,6 @@ export default function Home() {
 
   return (
     <main className='grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10'>
-        <a href={'/home'} className="btn mr-2">
-        <PenSquare />
-        Notes
-      </a>
       {posts &&
         posts.map((post: Post) => (
            <PostCard key={post.id} post={post} /> 
