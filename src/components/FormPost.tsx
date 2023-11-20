@@ -49,20 +49,21 @@ const FormPost: FC<FormPostProps> = ({
       {isLoadingTags ? (
         <span className="loading loading-dots loading-lg"></span>
       ) : (
-        <select
-          {...register("tagId", { required: true })}
-          className="select select-ghost w-full max-w-lg"
-          defaultValue={initialValue ? initialValue.tagId : ""}
-        >
-          <option disabled value="">
-            Select tags
-          </option>
-          {dataTags?.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+<select
+  {...register("tagId", { required: true })}
+  className="select select-ghost w-full max-w-lg"
+  defaultValue={initialValue ? initialValue?.tag.name : ""}
+>
+  <option disabled value="">
+    Select tags
+  </option>
+  {dataTags?.map((item) => (
+    <option key={item.id} value={item.id}>
+      {item.name}
+    </option>
+  ))}
+</select>
+
       )}
       <button type="submit" className="btn w-full max-w-lg border">
         {isPendingSubmit && <span className="loading loading-spinner"></span>}
