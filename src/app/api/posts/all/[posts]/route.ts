@@ -1,7 +1,12 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
+interface contextProps {
+  params: {
+    posts: string;
+  };
+}
 
-export async function GET(req: Request) {
+export async function GET(req: Request, context: contextProps) {
     try {
         const response = await db.post.findMany({
               select:{

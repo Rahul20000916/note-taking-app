@@ -19,7 +19,8 @@ export default function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await axios.get('/api/posts/all/');
+        const id ='getting-all-the-posts'
+        const response = await axios.get(`/api/posts/all/${id}`);
         setPosts(response.data);
       } catch (error) {
         console.error('Error fetching posts:', error);
