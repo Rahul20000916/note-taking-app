@@ -21,10 +21,11 @@ const FormPost: FC<FormPostProps> = ({
   const { register, handleSubmit } = useForm<FormInputPost>({
     defaultValues: initialValue,
   });
+  const id = 'get-all-tags'
   const { data: dataTags, isLoading: isLoadingTags } = useQuery<Tag[]>({
     queryKey: ["tags"],
     queryFn: async () => {
-      const response = await axios.get("/api/tags");
+      const response = await axios.get(`/api/tags/${id}`);
       return response.data;
     },
   });
@@ -51,6 +52,7 @@ const FormPost: FC<FormPostProps> = ({
         <select
           {...register("tagId", { required: true })}
           className="select select-ghost w-full max-w-lg"
+          defaultValue=''
         >
           <option disabled value="">
             Select tags
