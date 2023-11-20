@@ -19,9 +19,9 @@ const fetcher = async (url: string) => {
 
 export default function Home() {
   const { data: posts, error } = useSWR('/api/posts/all', fetcher, {
-    refreshInterval: 10000, // 10 seconds
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
+    refreshInterval: 10000, 
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true,
   });
 
   if (error) {
