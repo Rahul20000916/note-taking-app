@@ -21,7 +21,7 @@ const FormPost: FC<FormPostProps> = ({
   const { register, handleSubmit } = useForm<FormInputPost>({
     defaultValues: initialValue,
   });
-  const id = 'get-all-tags'
+  const id = "get-all-tags";
   const { data: dataTags, isLoading: isLoadingTags } = useQuery<Tag[]>({
     queryKey: ["tags"],
     queryFn: async () => {
@@ -52,7 +52,7 @@ const FormPost: FC<FormPostProps> = ({
         <select
           {...register("tagId", { required: true })}
           className="select select-ghost w-full max-w-lg"
-          defaultValue=''
+          defaultValue={initialValue ? initialValue.tagId : ""}
         >
           <option disabled value="">
             Select tags
