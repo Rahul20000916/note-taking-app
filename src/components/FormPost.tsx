@@ -22,7 +22,6 @@ const FormPost: FC<FormPostProps> = ({
     defaultValues: initialValue,
   });
   const id = "get-all-tags";
-  console.log(initialValue?.tag.name,"console.log-----------")
   const { data: dataTags, isLoading: isLoadingTags } = useQuery<Tag[]>({
     queryKey: ["tags"],
     queryFn: async () => {
