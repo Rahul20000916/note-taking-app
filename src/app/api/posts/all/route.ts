@@ -1,48 +1,22 @@
-// import { db } from "@/lib/db";
-// import { NextResponse } from "next/server";
-
-// export async function GET() {
-//     try {
-//         const response = await db.post.findMany({
-//               select:{
-//                 id: true,
-//                 title: true,
-//                 content: true,
-//                 tag: true,
-//               },
-//               orderBy: {
-//                 createdAt: 'desc'
-//               }
-//             });
-//         return NextResponse.json(response, {status: 200})
-//     }catch(error){
-//         return NextResponse.json({message: 'could not fetching post'}, {status: 500})
-//     }
-    
-// }
-
-// api/posts/all.js
-
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function GET() {
     try {
         const response = await db.post.findMany({
-            select: {
+              select:{
                 id: true,
                 title: true,
                 content: true,
                 tag: true,
-            },
-            orderBy: {
+              },
+              orderBy: {
                 createdAt: 'desc'
-            }
-        });
-
-        return NextResponse.json(response, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-        return NextResponse.json({ message: 'Could not fetch posts' }, { status: 500 });
+              }
+            });
+        return NextResponse.json(response, {status: 200})
+    }catch(error){
+        return NextResponse.json({message: 'could not fetching post'}, {status: 500})
     }
+    
 }
